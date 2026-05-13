@@ -51,6 +51,16 @@ Entity Framework Extensions is consistently faster and usually more memory-effic
 
 ---
 
+## 🔹 Microting (MySQL)
+
+![Benchmark EFCore vs EFE – Microting - Bulk Insert](https://raw.githubusercontent.com/zzzprojects/EntityFramework-Extensions/master/images/benchmark-efcore-vs-efe-microting-bulk-insert.png)
+
+**Description:**  
+This chart shows Bulk Insert benchmarks on **MySQL** with [Microting.EntityFrameworkCore.MySql](https://www.nuget.org/packages/Microting.EntityFrameworkCore.MySql/) provider (allow bulk copy), including plain insert, insert with graph, and insert with keep identity.  
+Entity Framework Extensions is consistently faster and usually more memory-efficient than EF Core.  
+
+---
+
 ## 🔹 Oracle
 
 ![Benchmark EFCore vs EFE – Oracle - Bulk Insert](https://raw.githubusercontent.com/zzzprojects/EntityFramework-Extensions/master/images/benchmark-efcore-vs-efe-oracle-bulk-insert.png)
