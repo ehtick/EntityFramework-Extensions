@@ -8,6 +8,7 @@ using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
 using Perfolizer.Horology;
 using Perfolizer.Metrology;
+using Z.BulkOperations;
 
 namespace EFCore.Benchmarks
 {
@@ -38,12 +39,13 @@ namespace EFCore.Benchmarks
         //   - Multiple providers: put them in the SAME [Params(...)] line.
         // ─────────────────────────────────────────────────────────────────────────
         [Params(
-            TestProviderKind.SqlServer
+        TestProviderKind.SqlServer
         //, TestProviderKind.PostgreSQL
         //, TestProviderKind.Oracle
         //, TestProviderKind.SQLite
         //, TestProviderKind.MySQL
         //, TestProviderKind.MariaDB
+        //  TestProviderKind.MicrotingMySQL
         )]
         public TestProviderKind ProviderKind;
 
@@ -56,9 +58,9 @@ namespace EFCore.Benchmarks
         [Params(
          //,   10
          //, 100
-         //, 1_000
-         10_000
-        //, 100_000
+          1_000
+        , 10_000
+        , 100_000
         //, 1_000_000
         )]
         public int EntityCount;
@@ -86,7 +88,7 @@ namespace EFCore.Benchmarks
                 // ==== Bulk Insert ====
                 typeof(BulkInsertBenchmark),
                 typeof(BulkInsertWithGraphBenchmark),
-                typeof(BulkInsertWithKeepIdentityBenchmark),
+                //typeof(BulkInsertWithKeepIdentityBenchmark),
 
                 // ==== Bulk Merge ====
                 //typeof(BulkMergeBenchmark),

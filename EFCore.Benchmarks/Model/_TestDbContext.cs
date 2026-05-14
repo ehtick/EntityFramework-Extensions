@@ -18,7 +18,8 @@ namespace EFCore.Benchmarks
 				case TestProviderKind.SQLite:
 				case TestProviderKind.MySQL:
 				case TestProviderKind.MariaDB:
-					this.Database.EnsureCreated();
+                case TestProviderKind.MicrotingMySQL:
+                    this.Database.EnsureCreated();
                     break;
 				case TestProviderKind.Oracle:
                     try
@@ -58,11 +59,12 @@ namespace EFCore.Benchmarks
                     case TestProviderKind.MariaDB:
                         optionsBuilder.UseMySQL(My.MariaDB);
                         break;
-
                     case TestProviderKind.MySQL:
                         optionsBuilder.UseMySQL(My.MySQL);
                         break;
-
+                    case TestProviderKind.MicrotingMySQL:
+                        optionsBuilder.UseMySql(My.Microting, new MySqlServerVersion(new Version(8, 3, 0)));
+                        break;
                     case TestProviderKind.PostgreSQL:
                         optionsBuilder.UseNpgsql(My.PostgreSQL);
                         break;

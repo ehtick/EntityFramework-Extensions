@@ -5,6 +5,7 @@
         SqlServer,
         MariaDB,
         MySQL,
+        MicrotingMySQL,
         PostgreSQL,
         SQLite,
         Oracle,

@@ -18,6 +18,7 @@ namespace EFCore.Benchmarks
         public static string SQLite => _configuration.GetConnectionString("SQLite")!;
         public static string MariaDB => _configuration.GetConnectionString("MariaDB")!;
         public static string MySQL => _configuration.GetConnectionString("MySQL")!;
+        public static string Microting => _configuration.GetConnectionString("Microting")!;
         public static string PostgreSQL => _configuration.GetConnectionString("PostgreSQL")!;
         public static string Oracle => _configuration.GetConnectionString("Oracle")!;
     }
